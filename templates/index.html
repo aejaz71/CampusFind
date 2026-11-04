@@ -1,0 +1,16 @@
+{% extends "base.html" %}{% block title %}CampusFind | Home{% endblock %}
+{% block content %}
+<section class="hero p-5 rounded-4">
+ <span class="badge text-bg-light mb-3">Smart campus lost & found</span>
+ <h1 class="display-5 fw-bold">Lost something on campus?</h1>
+ <p class="lead col-lg-8">Report lost and found belongings in one place. CampusFind ranks possible matches to help people reconnect with their items.</p>
+ <a class="btn btn-primary btn-lg me-2" href="{{ url_for('register') }}">Get started</a>
+ <a class="btn btn-outline-light btn-lg" href="{{ url_for('login') }}">Log in</a>
+</section>
+<div class="row g-3 mt-3">
+ <div class="col-md-4"><div class="feature"><h5>Report</h5><p>Share item details, date and campus location.</p></div></div>
+ <div class="col-md-4"><div class="feature"><h5>Match</h5><p>Text similarity ranks possible lost/found pairs.</p></div></div>
+ <div class="col-md-4"><div class="feature"><h5>Verify</h5><p>Submit private claim evidence for human review.</p></div></div>
+</div>
+<p class="small text-secondary mt-4">AI suggestions are not proof of ownership. Keep unique identifying details private.</p>
+{% endblock %}

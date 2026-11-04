@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block title %}Search reports{% endblock %}{% block content %}
+<h2>Search campus reports</h2><form class="row g-2 mb-4">
+<div class="col-md-5"><input class="form-control" name="q" value="{{ q }}" placeholder="Search title, description or location"></div>
+<div class="col-md-3"><select class="form-select" name="category"><option value="">All categories</option>{% for c in ['Electronics','Wallets & ID cards','Books & stationery','Clothing','Keys','Bags','Accessories','Other'] %}<option {% if category==c %}selected{% endif %}>{{ c }}</option>{% endfor %}</select></div>
+<div class="col-md-2"><select class="form-select" name="type"><option value="">Lost & found</option><option value="lost" {% if item_type=='lost' %}selected{% endif %}>Lost</option><option value="found" {% if item_type=='found' %}selected{% endif %}>Found</option></select></div>
+<div class="col-md-2"><button class="btn btn-primary w-100">Search</button></div></form>
+<div class="row g-3">{% for item in items %}<div class="col-md-6 col-lg-4"><div class="item-card h-100"><span class="badge {{ 'text-bg-danger' if item.item_type=='lost' else 'text-bg-success' }}">{{ item.item_type|upper }}</span><h5 class="mt-2">{{ item.title }}</h5><p class="small text-secondary">{{ item.category }} · {{ item.location }} · {{ item.event_date }}</p><p>{{ item.description|truncate(120) }}</p><a class="btn btn-outline-primary btn-sm" href="{{ url_for('item_detail', item_id=item.id) }}">View</a></div></div>{% else %}<p>No reports match your search.</p>{% endfor %}</div>{% endblock %}

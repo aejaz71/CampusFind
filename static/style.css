@@ -1,0 +1,12 @@
+:root{--navy:#14213d;--blue:#3157d5;--pale:#eef3ff}
+body{background:#f6f8fc;color:#182235;font-family:Inter,system-ui,Arial,sans-serif}
+.nav-custom{background:var(--navy)}
+.hero{background:linear-gradient(120deg,#14213d,#3157d5);color:white;box-shadow:0 12px 35px #14213d22}
+.btn-primary{background:var(--blue);border-color:var(--blue)}
+.feature,.item-card,.form-card{background:white;border:1px solid #e6eaf2;border-radius:16px;padding:22px;box-shadow:0 6px 22px #1d35570b}
+.feature{height:100%}.feature p{color:#64748b;margin-bottom:0}
+.form-card{max-width:480px;margin:30px auto}.form-card.wide{max-width:760px}
+.form-control,.form-select{border-color:#dce2ed;padding:10px 12px}
+.match-row{display:flex;justify-content:space-between;align-items:center;background:white;border:1px solid #e6eaf2;border-radius:12px;padding:14px 18px;margin:10px 0}
+.report-image{max-width:260px;max-height:220px;object-fit:contain;border-radius:12px;display:block;margin:15px 0}
+footer{border-top:1px solid #e8ecf3;margin-top:50px}

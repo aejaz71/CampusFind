@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% block title %}Report item{% endblock %}{% block content %}
+<div class="form-card wide"><h2>Submit an item report</h2><form method="post" enctype="multipart/form-data">
+<label class="form-label">Report type</label><select class="form-select mb-3" name="item_type" required><option value="lost">I lost an item</option><option value="found">I found an item</option></select>
+<label class="form-label">Item title</label><input class="form-control mb-3" name="title" placeholder="e.g. Black leather wallet" required>
+<label class="form-label">Category</label><select class="form-select mb-3" name="category" required>{% for c in ['Electronics','Wallets & ID cards','Books & stationery','Clothing','Keys','Bags','Accessories','Other'] %}<option>{{ c }}</option>{% endfor %}</select>
+<label class="form-label">Description</label><textarea class="form-control mb-3" name="description" rows="3" required placeholder="Describe general visible features. Keep unique proof private."></textarea>
+<label class="form-label">Campus location</label><input class="form-control mb-3" name="location" required placeholder="e.g. Library entrance">
+<label class="form-label">Date</label><input class="form-control mb-3" type="date" name="event_date" required>
+<label class="form-label">Optional photo (PNG/JPG/WEBP, max 4 MB)</label><input class="form-control mb-3" type="file" name="image" accept=".png,.jpg,.jpeg,.webp">
+<button class="btn btn-primary">Publish report</button></form></div>{% endblock %}
